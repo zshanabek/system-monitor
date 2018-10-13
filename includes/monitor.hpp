@@ -6,7 +6,7 @@
 # include <limits.h>
 # include <sys/utsname.h>
 # include <ctime>
-
+# include <sstream> 
 
 
 #define HOST_NAME_MAX 42
