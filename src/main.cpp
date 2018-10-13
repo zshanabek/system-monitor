@@ -29,28 +29,33 @@ void terminal()
 	Datetime datetime = Datetime();
 	CPU cpu = CPU();
 
-	refresh();
+	std::string l = std::to_string(cpu.getCoresNumber());
+	std::string m = std::to_string(cpu.getClockSpeed());
 
-	rectangle(0, 0, 3, 30);
-
+	rectangle(0, 0, 3, 50);
 	mvprintw(1, 2, "Hostname: ");
 	mvprintw(1, 12, hname.getHostname().c_str());
 	mvprintw(2, 2, "Username: ");
 	mvprintw(2, 12, hname.getUsername().c_str());
 
-	rectangle(4, 0, 6, 30);
+	rectangle(4, 0, 6, 50);
 	mvprintw(5, 2, "OS name: ");
 	mvprintw(5, 11, os.getOSName().c_str());
 
-	rectangle(7, 0, 9, 30);
+	rectangle(7, 0, 9, 50);
 	mvprintw(8, 2, "Date time: ");
 	mvprintw(8, 13, datetime.getDatetime().c_str());
 
-	rectangle(10, 0, 16, 30);
-	std::string l = std::to_string(cpu.getCoresNumber());
-	mvprintw(11, 2, "Number of cores: ");	
-	mvprintw(11, 19, l.c_str());
-	while (!exit) {
+	rectangle(10, 0, 16, 50);
+	mvprintw(11, 2, "Model: ");	
+	mvprintw(11, 9, cpu.getModel().c_str());
+	mvprintw(12, 2, "CPU Load: ");	
+	mvprintw(12, 12, m.c_str());
+	mvprintw(13, 2, "Number of cores: ");	
+	mvprintw(13, 19, l.c_str());
+
+	while (!exit)
+	{
 		command = getch();
 		if (27 == command)
 			exit = true;
@@ -71,4 +76,3 @@ int main()
 		std::cout << "SDL\n";
 	return 0;
 }
-

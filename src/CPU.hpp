@@ -12,9 +12,11 @@ class CPU
 		CPU (CPU const & copy);
 		CPU & operator=(CPU const & copy);
 		int getCoresNumber();
+		float getClockSpeed();
+		std::string getModel();
 	private:
-		std::string model;
-		// float _clock_speed;
+		std::string _model;
+		float _clock_speed;
 		int _cores;
 };
 
