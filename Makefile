@@ -25,7 +25,7 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp | obj
 		@$(CC)-g -o $@ -c $<
 
 obj:
-	mkdir obj/
+	@mkdir obj/
 
 clean:
 	@rm -rf obj/
