@@ -1,4 +1,4 @@
-#include "OSInfo.hpp"
+#include "../includes/OSInfo.hpp"
 
 std::string getOsName()
 {
@@ -42,3 +42,12 @@ std::string OSInfo::getOSName()
 {
 	return this->_osname;
 };
+
+void OSInfo::showData()
+{
+	attron(COLOR_PAIR(1));
+	// rectangle(4, 0, 6, 50);
+	attroff(COLOR_PAIR(1));
+	mvprintw(5, 2, "OS name: ");
+	mvprintw(5, 11, getOSName().c_str());
+}

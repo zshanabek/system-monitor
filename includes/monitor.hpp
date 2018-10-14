@@ -20,5 +20,4 @@
 #define HOST_NAME_MAX 42
 #define LOGIN_NAME_MAX 42
 
-
 #endif

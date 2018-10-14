@@ -2,14 +2,20 @@
 # define OSINFO_HPP
 # include <iostream>
 # include <string>
+# include "IMonitorModule.hpp"
+# include "monitor.hpp"
+# include "Module.hpp"
 
-class OSInfo
+class OSInfo : public Module
 {
 	public:
 		OSInfo ();
 		~OSInfo ();
 		OSInfo (OSInfo const & copy);
 		OSInfo & operator=(OSInfo const & copy);
+
+		void showData();
+
 		std::string getOSName();
 
 	private:

@@ -1,5 +1,3 @@
-#include "../includes/RAM.hpp"
-
 #include <unistd.h>
 #include <mach/vm_statistics.h>
 #include <mach/mach_types.h>
@@ -7,9 +5,9 @@
 #include <mach/mach_host.h>
 #include <iostream>
 
-void RAM::updateData()
+int read_mem_usage_percent()
 {
-	vm_size_t page_size;
+    vm_size_t page_size;
     mach_port_t mach_port;
     mach_msg_type_number_t count;
     vm_statistics64_data_t vm_stats;
@@ -24,59 +22,44 @@ void RAM::updateData()
         long long free_memory = static_cast<int64_t>(vm_stats.free_count) *
                                 static_cast<int64_t>(page_size);
 
-		this->_unused = free_memory;
+		std::cout << free_memory << std::endl;
 
         long long used_memory = (static_cast<int64_t>(vm_stats.active_count) +
                                  static_cast<int64_t>(vm_stats.inactive_count) +
                                  static_cast<int64_t>(vm_stats.wire_count)) *
                                 static_cast<int64_t>(page_size);
-		this->_used = used_memory;
+		std::cout << used_memory << std::endl;
         double total = static_cast<double>(free_memory + used_memory);
         usage = static_cast<int>(used_memory / total * 100);
     }
-}
-
-RAM::RAM()
-{
-	updateData();
-}
-
-RAM::~RAM()
-{
+    return usage;
 
 }
 
-RAM::RAM(RAM const & src)
+void ok()
 {
-	*this = src;
+
+	mach_msg_type_number_t count = HOST_VM_INFO_COUNT;
+	vm_statistics_data_t vmstat;
+	double total = vmstat.wire_count + vmstat.active_count + vmstat.inactive_count + vmstat.free_count;
+	double wired = vmstat.wire_count / total;
+	double active = vmstat.active_count / total;
+	double inactive = vmstat.inactive_count / total;
+	double free = vmstat.free_count / total;
+
+	int t = static_cast<int>(total);
+	int w = static_cast<int>(wired);
+	std::cout << t << std::endl;
+	std::cout << w << std::endl;
 }
 
-RAM & RAM::operator=(RAM const & copy)
+int main()
 {
-	(void)copy;	
-	return (*this);
-}
 
-long long RAM::getUsedMemory()
-{
-	return this->_used;
-}
+	ok();
+	// while(1)
+	// {
+	// 	std::cout << read_mem_usage_percent() << std::endl;
 
-long long RAM::getUnusedMemory()
-{
-	return this->_unused;
-}
-
-void RAM::showData()
-{
-	std::string u = std::to_string(getUsedMemory());
-	std::string f = std::to_string(getUnusedMemory());
-	attron(COLOR_PAIR(1));
-	// rectangle(17, 0, 21, 50);
-	attroff(COLOR_PAIR(1));
-	mvprintw(18, 25, "RAM");
-	mvprintw(19, 2, "Used");
-	mvprintw(19, 13, u.c_str());
-	mvprintw(20, 2, "Unused");
-	mvprintw(20, 13, f.c_str());
+	// }
 }

@@ -1,4 +1,4 @@
-#include "Hostname.hpp"
+#include "../includes/Hostname.hpp"
 
 Hostname::Hostname()
 {
@@ -37,3 +37,15 @@ std::string Hostname::getUsername()
 {
 	return this->_username;
 };
+
+void Hostname::showData()
+{
+	mvprintw(0,0,"ffdf");
+	attron(COLOR_PAIR(1));
+	// rectangle(0, 0, 3, 50);
+	attroff(COLOR_PAIR(1));
+	mvprintw(1, 2, "Hostname: ");
+	mvprintw(1, 12, getHostname().c_str());
+	mvprintw(2, 2, "Username: ");
+	mvprintw(2, 12, getUsername().c_str());
+}

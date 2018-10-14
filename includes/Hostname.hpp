@@ -4,14 +4,18 @@
 # include <string>
 # include "IMonitorModule.hpp"
 # include "../includes/monitor.hpp"
+# include "Module.hpp"
 
-class Hostname : public IMonitorModule
+class Hostname : public Module
 {
 	public:
 		Hostname ();
 		~Hostname ();
 		Hostname (Hostname const & copy);
 		Hostname & operator=(Hostname const & copy);
+
+		void showData();
+
 		std::string getHostname();
 		std::string getUsername();
 	private:

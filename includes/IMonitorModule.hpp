@@ -11,6 +11,8 @@ class IMonitorModule
 		IMonitorModule (IMonitorModule const & copy);
 		IMonitorModule & operator=(IMonitorModule const & copy);
 
+		virtual void updateData() = 0;
+		virtual void showData() = 0;
 	private:
 
 };

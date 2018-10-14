@@ -1,4 +1,4 @@
-#include "CPU.hpp"
+#include "../includes/CPU.hpp"
 
 static unsigned long long _previousTotalTicks = 0;
 static unsigned long long _previousIdleTicks = 0;
@@ -13,7 +13,7 @@ float CalculateCPULoad(unsigned long long idleTicks, unsigned long long totalTic
 	return ret;
 }
 
-float GetCPULoad()
+void CPU::updateData()
 {
 	host_cpu_load_info_data_t cpuinfo;
 	mach_msg_type_number_t count = HOST_CPU_LOAD_INFO_COUNT;
@@ -21,9 +21,9 @@ float GetCPULoad()
 	{
 		unsigned long long totalTicks = 0;
 		for(int i=0; i<CPU_STATE_MAX; i++) totalTicks += cpuinfo.cpu_ticks[i];
-		return CalculateCPULoad(cpuinfo.cpu_ticks[CPU_STATE_IDLE], totalTicks);
+		this->_clock_speed = CalculateCPULoad(cpuinfo.cpu_ticks[CPU_STATE_IDLE], totalTicks);
 	}
-	else return -1.0f;
+	this->_clock_speed = -1.0f;
 }
 
 CPU::CPU()
@@ -31,8 +31,7 @@ CPU::CPU()
 	char buffer[42];
     size_t bufferlen = 42;
     sysctlbyname("machdep.cpu.brand_string",&buffer,&bufferlen,NULL,0);
-
-	this->_clock_speed = GetCPULoad();
+	updateData();
 	this->_model = buffer;
 	this->_cores = sysconf(_SC_NPROCESSORS_ONLN);
 }
@@ -66,4 +65,21 @@ std::string CPU::getModel()
 float CPU::getClockSpeed()
 {
 	return this->_clock_speed;	
+}
+
+void CPU::showData()
+{
+	std::string l = std::to_string(this->getCoresNumber());
+	std::string cs = std::to_string(this->getClockSpeed());
+
+	attron(COLOR_PAIR(1));
+	// rectangle(10, 0, 16, 50);
+	attroff(COLOR_PAIR(1));
+	mvprintw(11, 25, "CPU");
+	mvprintw(12, 2, "Model: ");	
+	mvprintw(12, 9, getModel().c_str());
+	mvprintw(13, 2, "CPU Load: ");	
+	mvprintw(13, 12, cs.c_str());
+	mvprintw(14, 2, "Number of cores: ");	
+	mvprintw(14, 19, l.c_str());
 }
