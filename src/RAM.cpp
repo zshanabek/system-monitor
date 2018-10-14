@@ -96,3 +96,8 @@ void RAM::showData()
 	mvprintw(21, 2, "Total: ");
 	mvprintw(21, 13, t.c_str());
 }
+
+void RAM::showGraphicData()
+{
+	
+}

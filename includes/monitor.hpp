@@ -17,6 +17,9 @@
 # include <mach/mach_host.h>
 # include <mach/vm_map.h>
 
+// classes
+
+
 #define HOST_NAME_MAX 42
 #define LOGIN_NAME_MAX 42
 

@@ -16,6 +16,7 @@ class CPU : public Module
 
 		void updateData();
 		void showData();
+		void showGraphicData();
 
 		int getCoresNumber();
 		float getClockSpeed();

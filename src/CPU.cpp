@@ -83,3 +83,8 @@ void CPU::showData()
 	mvprintw(14, 2, "Number of cores: ");	
 	mvprintw(14, 19, l.c_str());
 }
+
+void CPU::showGraphicData()
+{
+	
+}

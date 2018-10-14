@@ -15,7 +15,8 @@ class Hostname : public Module
 		Hostname & operator=(Hostname const & copy);
 
 		void showData();
-
+		void showGraphicData();
+	
 		std::string getHostname();
 		std::string getUsername();
 	private:

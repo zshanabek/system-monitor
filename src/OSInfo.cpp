@@ -51,3 +51,8 @@ void OSInfo::showData()
 	mvprintw(5, 2, "OS name: ");
 	mvprintw(5, 11, getOSName().c_str());
 }
+
+void OSInfo::showGraphicData()
+{
+	
+}

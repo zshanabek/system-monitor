@@ -13,6 +13,7 @@ class IMonitorModule
 
 		virtual void updateData() = 0;
 		virtual void showData() = 0;
+		virtual void showGraphicData() = 0;
 	private:
 
 };

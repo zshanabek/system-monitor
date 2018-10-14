@@ -10,6 +10,21 @@ Module::~Module()
 
 }
 
+std::string					Module::getCMDOutput(const char *cmd)
+{
+	FILE					*pipe;
+	char					buff[128];
+	std::string				output;
+	
+	if ((pipe = popen(cmd, "r")))
+	{
+		while (fgets(buff, 128, pipe) != NULL)
+			output += buff;
+		pclose(pipe);
+	}
+	return output;
+}
+
 Module::Module(Module const & src)
 {
 	*this = src;
@@ -39,5 +54,13 @@ void Module::showData()
 	for (it = modules.begin(); it != modules.end(); ++it)
 	{
 		(*it)->showData();
+	}
+}
+
+void Module::showGraphicData()
+{
+	for (it = modules.begin(); it != modules.end(); ++it)
+	{
+		(*it)->showGraphicData();
 	}
 }

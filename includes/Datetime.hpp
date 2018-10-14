@@ -16,7 +16,7 @@ class Datetime : public Module
 
 		void updateData();
 		void showData();
-
+		void showGraphicData();
 		std::string getDatetime();
 	private:
 		std::string _datetime;

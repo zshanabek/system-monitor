@@ -48,3 +48,8 @@ void Hostname::showData()
 	mvprintw(2, 2, "Username: ");
 	mvprintw(2, 12, getUsername().c_str());
 }
+
+void Hostname::showGraphicData()
+{
+	
+}

@@ -16,6 +16,7 @@ class RAM : public Module
 
 		void updateData();
 		void showData();
+		void showGraphicData();
 
 		long long getUsedMemory();
 		long long getUnusedMemory();

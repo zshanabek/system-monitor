@@ -47,3 +47,8 @@ void Datetime::showData()
 	mvprintw(8, 2, "Date time: ");
 	mvprintw(8, 13, getDatetime().c_str());
 }
+
+void Datetime::showGraphicData()
+{
+	
+}

@@ -20,9 +20,9 @@ void terminal()
 	CPU cpu = CPU();
 
 	m.pushback(&hname);
+	m.pushback(&datetime);
 	m.pushback(&os);
 	m.pushback(&ram);
-	m.pushback(&datetime);
 	m.pushback(&cpu);
 
 	start_color();
