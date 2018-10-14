@@ -73,7 +73,7 @@ void CPU::showData()
 	std::string cs = std::to_string(this->getClockSpeed());
 
 	attron(COLOR_PAIR(1));
-	// rectangle(10, 0, 16, 50);
+	rectangle(10, 0, 16, 50);
 	attroff(COLOR_PAIR(1));
 	mvprintw(11, 25, "CPU");
 	mvprintw(12, 2, "Model: ");	

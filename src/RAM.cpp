@@ -86,7 +86,7 @@ void RAM::showData()
 	std::string t = std::to_string(this->_total);
 
 	attron(COLOR_PAIR(1));
-	// rectangle(17, 0, 21, 50);
+	rectangle(17, 0, 22, 50);
 	attroff(COLOR_PAIR(1));
 	mvprintw(18, 25, "RAM");
 	mvprintw(19, 2, "Used: ");

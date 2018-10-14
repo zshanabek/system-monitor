@@ -20,4 +20,6 @@
 #define HOST_NAME_MAX 42
 #define LOGIN_NAME_MAX 42
 
+void rectangle(int y1, int x1, int y2, int x2);
+
 #endif

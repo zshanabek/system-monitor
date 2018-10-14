@@ -8,7 +8,7 @@
 
 void terminal()
 {
-	// int		command;
+	int		command;
 	bool	exit = false;
 
 	initscr();
@@ -27,15 +27,15 @@ void terminal()
 
 	start_color();
 	init_pair(1, COLOR_CYAN, COLOR_BLACK);
-
+	nodelay(stdscr, true);
 	while (!exit)
 	{
+		command = getch();
+		if (27 == command)
+			exit = true;
 		m.updateData();
 		m.showData();
 		refresh();
-		// command = getch();	
-		// if (27 == command)
-			// exit = true;
 	}
 	endwin();
 }

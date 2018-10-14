@@ -42,7 +42,7 @@ std::string Datetime::getDatetime()
 void Datetime::showData()
 {
 	attron(COLOR_PAIR(1));
-	// rectangle(7, 0, 9, 50);
+	rectangle(7, 0, 9, 50);
 	attroff(COLOR_PAIR(1));
 	mvprintw(8, 2, "Date time: ");
 	mvprintw(8, 13, getDatetime().c_str());
