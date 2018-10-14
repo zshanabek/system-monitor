@@ -19,11 +19,10 @@ class CPU : public Module
 		void showGraphicData();
 
 		int getCoresNumber();
-		float getClockSpeed();
 		std::string getModel();
 	private:
 		std::string _model;
-		float _clock_speed;
+		std::string _ok[6]; 		
 		int _cores;
 };
 
