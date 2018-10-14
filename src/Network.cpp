@@ -55,7 +55,7 @@ void Network::showGraphicData()
 	if (show_network)
 	{
 		ImGui::Begin("Network Info!", &show_os);
-		ImGui::TextWrapped("IP address: %s\nSubnet: %s\n%sRouter: %s\nEthernet: %s\nIn: %s\nOut: %s\n", _raw[0].c_str(), _raw[1].c_str(), _raw[2].c_str(), _raw[3].c_str(), _raw[4].c_str(), _raw[5].c_str());
+		ImGui::TextWrapped("IP address: %s\nSubnet: %s\nRouter: %s\nEthernet: %s\nIn: %s\nOut: %s\n", _raw[0].c_str(), _raw[1].c_str(), _raw[2].c_str(), _raw[3].c_str(), _raw[4].c_str(), _raw[5].c_str());
 		ImGui::End();
 	}
 }
