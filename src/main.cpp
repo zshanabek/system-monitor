@@ -135,6 +135,9 @@ void graphical()
 		{
 			ImGui::Begin("Settings!");                          // Create a window called "Hello, world!" and append into it.
 			ImGui::Checkbox("Time", &show_time);
+			ImGui::Checkbox("Os", &show_os);
+			ImGui::Checkbox("Host", &show_host);
+			ImGui::Checkbox("Network", &show_network);
 			ImGui::Checkbox("CPU", &show_cpu);
 			ImGui::ColorEdit3("Background color", (float*)&clear_color); // Edit 3 floats representing a color
 			ImGui::End();
