@@ -8,22 +8,23 @@
 
 class CPU : public Module
 {
-	public:
-		CPU ();
-		~CPU ();
-		CPU (CPU const & copy);
-		CPU & operator=(CPU const & copy);
+public:
+	CPU ();
+	~CPU ();
+	CPU (CPU const & copy);
+	CPU & operator=(CPU const & copy);
 
-		void updateData();
-		void showData();
-		void showGraphicData();
+	void updateData();
+	void showData();
+	void showGraphicData();
 
-		int getCoresNumber();
-		std::string getModel();
-	private:
-		std::string _model;
-		std::string _ok[6]; 		
-		int _cores;
+	int getCoresNumber();
+	std::string getModel();
+private:
+	std::string _model;
+	std::string _ok[6];
+	float _load;
+	int _cores;
 };
 
 

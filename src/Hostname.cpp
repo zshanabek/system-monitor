@@ -51,5 +51,11 @@ void Hostname::showData()
 
 void Hostname::showGraphicData()
 {
-	
+	if (show_host)
+	{
+		ImGui::Begin("Host!", &show_host);
+		ImGui::TextWrapped("Hostname: %s\nUsername: %s",
+						   getHostname().c_str(), getUsername().c_str());
+		ImGui::End();
+	}
 }

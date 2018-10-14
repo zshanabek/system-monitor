@@ -2,6 +2,7 @@
 # define IMONITORMODULE_HPP
 # include <iostream>
 # include <string>
+#include "Graphic.hpp"
 
 class IMonitorModule
 {
