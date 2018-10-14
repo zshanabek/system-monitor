@@ -5,6 +5,10 @@ void CPU::updateData()
 	_ok[0] = getCMDOutput("top -l 1 | grep -E \"^CPU\"| cut -d \" \" -f 3");
 	_ok[1] = getCMDOutput("top -l 1 | grep -E \"^CPU\"| cut -d \" \" -f 5");
 	_ok[2] = getCMDOutput("top -l 1 | grep -E \"^CPU\"| cut -d \" \" -f 7");
+
+	_ok[0].resize(_ok[0].length() - 1);
+	_ok[1].resize(_ok[1].length() - 1);
+	_ok[2].resize(_ok[2].length() - 1);
 }
 
 CPU::CPU()

@@ -8,6 +8,13 @@ void Network::updateData()
     _raw[3] = getCMDOutput("networksetup -getinfo Ethernet|grep -m 1 \"Ethernet\"|cut -d \" \" -f3");
 	_raw[4] = getCMDOutput("top -l 1 | grep -E \"^Net\"|cut -d \" \" -f3");
 	_raw[5] = getCMDOutput("top -l 1 | grep -E \"^Net\"|cut -d \" \" -f5");
+
+	_raw[0].resize(_raw[0].length() - 1);
+	_raw[1].resize(_raw[1].length() - 1);
+	_raw[2].resize(_raw[2].length() - 1);
+	_raw[3].resize(_raw[3].length() - 1);
+	_raw[4].resize(_raw[4].length() - 1);
+	_raw[5].resize(_raw[5].length() - 1);
 }
 
 Network::Network()
