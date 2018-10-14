@@ -3,6 +3,7 @@
 # include <iostream>
 # include <string>
 #include "../includes/monitor.hpp"
+#include "../includes/Module.hpp"
 
 class Network : public Module
 {
@@ -13,6 +14,7 @@ class Network : public Module
 		Network & operator=(Network const & copy);	
 
 		void showGraphicData();
+		void showData();
 	private:
 		std::string _raw[4]; 
 };

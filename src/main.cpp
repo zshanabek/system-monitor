@@ -4,6 +4,7 @@
 #include "../includes/RAM.hpp"
 #include "../includes/Datetime.hpp"
 #include "../includes/CPU.hpp"
+#include "../includes/Network.hpp"
 #include "../includes/Module.hpp"
 
 void terminal()
@@ -18,12 +19,14 @@ void terminal()
 	RAM ram = RAM();
 	Datetime datetime = Datetime();
 	CPU cpu = CPU();
+	Network net = Network();
 
 	m.pushback(&hname);
 	m.pushback(&datetime);
 	m.pushback(&os);
 	m.pushback(&ram);
 	m.pushback(&cpu);
+	m.pushback(&net);
 
 	start_color();
 	init_pair(1, COLOR_CYAN, COLOR_BLACK);

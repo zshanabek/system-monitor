@@ -3,7 +3,7 @@ NAME = ft_gkrellm
 SRC_DIR = ./src/
 OBJ_DIR = ./obj/
 
-FILENAMES = main.cpp Module.cpp Hostname.cpp OSInfo.cpp RAM.cpp Datetime.cpp CPU.cpp IMonitorDisplay.cpp IMonitorModule.cpp helpers.cpp
+FILENAMES = main.cpp Module.cpp Network.cpp Hostname.cpp OSInfo.cpp RAM.cpp Datetime.cpp CPU.cpp IMonitorDisplay.cpp IMonitorModule.cpp helpers.cpp
 
 SRC = $(addprefix $(SRC_DIR), $(FILENAMES))
 OBJ = $(addprefix $(OBJ_DIR), $(FILENAMES:.cpp=.o))
