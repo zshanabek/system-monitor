@@ -46,8 +46,6 @@ void RAM::updateData()
         double total = static_cast<double>(free_memory + used_memory);
         usage = static_cast<int>(used_memory / total * 100);
     }
-
-	this->_total = this->_total >>= 30;
 }
 
 RAM::RAM()
@@ -97,10 +95,15 @@ void RAM::showData()
 	mvprintw(20, 13, f.c_str());
 	mvprintw(21, 2, "Total: ");
 	mvprintw(21, 13, t.c_str());
-	mvprintw(21, 14, "GB");
 }
 
 void RAM::showGraphicData()
 {
-	
+	if (show_os)
+	{
+		ImGui::Begin("RAM Info!", &show_os);
+		ImGui::TextWrapped("Used: %llu\nUnused: %llu\nTotal: %llu",
+						   getUsedMemory(), getUnusedMemory(), _total);
+		ImGui::End();
+	}
 }

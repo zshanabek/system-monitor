@@ -1,10 +1,15 @@
+#include <stdio.h>
+
+#include "../includes/Graphic.hpp"
+
+#include <iostream>
+
 #include "../includes/monitor.hpp"
 #include "../includes/Hostname.hpp"
 #include "../includes/OSInfo.hpp"
 #include "../includes/RAM.hpp"
 #include "../includes/Datetime.hpp"
 #include "../includes/CPU.hpp"
-#include "../includes/Network.hpp"
 #include "../includes/Module.hpp"
 #include "../includes/Cat.hpp"
 #include <ctime>
@@ -47,12 +52,13 @@ void terminal()
 		m.showData();
 		refresh();
 		while (clock() < time + frametime)
-  		 ;
+			;
 
 	}
-	
+
 	endwin();
 }
+
 
 int main()
 {
@@ -64,6 +70,6 @@ int main()
 	if (choice == "n")
 		terminal();
 	else
-		std::cout << "SDL\n";
+		graphical();
 	return 0;
 }

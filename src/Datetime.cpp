@@ -50,5 +50,10 @@ void Datetime::showData()
 
 void Datetime::showGraphicData()
 {
-	
+	if (show_time)
+	{
+		ImGui::Begin("Time!", &show_time);
+		ImGui::Text("%s", getDatetime().c_str());
+		ImGui::End();
+	}
 }

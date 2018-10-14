@@ -54,5 +54,11 @@ void OSInfo::showData()
 
 void OSInfo::showGraphicData()
 {
-	
+	if (show_os)
+	{
+		ImGui::Begin("OS Info!", &show_os);
+		ImGui::TextWrapped("OS name: %s",
+						   getOSName().c_str());
+		ImGui::End();
+	}
 }
