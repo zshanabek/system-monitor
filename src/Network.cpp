@@ -46,19 +46,19 @@ void Network::showGraphicData()
 void Network::showData()
 {
 	attron(COLOR_PAIR(1));
-	rectangle(23, 0, 34, 50);
+	rectangle(23, 0, 31, 50);
 	attroff(COLOR_PAIR(1));
-	mvprintw(24, 25, "Network");
+	mvprintw(24, 23, "Network");
 	mvprintw(25, 2, "IP address: ");
-	mvprintw(25, 13, _raw[0].c_str());
+	mvprintw(25, 14, _raw[0].c_str());
 	mvprintw(26, 2, "Subnet: ");
-	mvprintw(26, 13, _raw[1].c_str());
+	mvprintw(26, 14, _raw[1].c_str());
 	mvprintw(27, 2, "Router: ");
-	mvprintw(27, 13, _raw[2].c_str());
+	mvprintw(27, 14, _raw[2].c_str());
 	mvprintw(28, 2, "Ethernet: ");
-	mvprintw(28, 13, _raw[3].c_str());	
+	mvprintw(28, 14, _raw[3].c_str());	
 	mvprintw(29, 2, "In: ");
-	mvprintw(29, 13, _raw[4].c_str());
+	mvprintw(29, 14, _raw[4].c_str());
 	mvprintw(30, 2, "Out: ");
-	mvprintw(30, 13, _raw[5].c_str());	
+	mvprintw(30, 14, _raw[5].c_str());	
 }
