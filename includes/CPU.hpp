@@ -23,7 +23,6 @@ public:
 private:
 	std::string _model;
 	std::string _ok[6];
-	float _load;
 	int _cores;
 };
 
