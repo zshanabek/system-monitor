@@ -55,11 +55,14 @@ void CPU::showData()
 	mvprintw(12, 2, "Model: ");	
 	mvprintw(12, 9, getModel().c_str());
 	mvprintw(13, 2, "CPU Load: ");	
-	mvprintw(13, 12, _ok[0].c_str());
-	mvprintw(13, 18, _ok[1].c_str());
-	mvprintw(13, 24, _ok[2].c_str());
-	mvprintw(14, 2, "Number of cores: ");	
-	mvprintw(14, 19, l.c_str());
+	mvprintw(14, 2, "User: ");
+	mvprintw(14, 8, _ok[0].c_str());
+	mvprintw(14, 14, "Sys: ");
+	mvprintw(14, 19, _ok[1].c_str());
+	mvprintw(14, 25, "Total: ");
+	mvprintw(14, 32, _ok[2].c_str());
+	mvprintw(15, 2, "Number of cores: ");	
+	mvprintw(15, 19, l.c_str());
 }
 
 void CPU::showGraphicData()

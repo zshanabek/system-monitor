@@ -50,8 +50,8 @@ void Network::showData()
 	mvprintw(27, 13, _raw[2].c_str());
 	mvprintw(28, 2, "Ethernet: ");
 	mvprintw(28, 13, _raw[3].c_str());	
-	mvprintw(29, 2, "N1: ");
+	mvprintw(29, 2, "In: ");
 	mvprintw(29, 13, _raw[4].c_str());
-	mvprintw(30, 2, "N2: ");
+	mvprintw(30, 2, "Out: ");
 	mvprintw(30, 13, _raw[5].c_str());	
 }
