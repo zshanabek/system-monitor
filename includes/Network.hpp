@@ -13,10 +13,11 @@ class Network : public Module
 		Network (Network const & copy);
 		Network & operator=(Network const & copy);	
 
+		void updateData();
 		void showGraphicData();
 		void showData();
 	private:
-		std::string _raw[4]; 
+		std::string _raw[6]; 
 };
 
 #endif
