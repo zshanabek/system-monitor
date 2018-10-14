@@ -40,7 +40,6 @@ std::string Hostname::getUsername()
 
 void Hostname::showData()
 {
-	mvprintw(0,0,"ffdf");
 	attron(COLOR_PAIR(1));
 	// rectangle(0, 0, 3, 50);
 	attroff(COLOR_PAIR(1));

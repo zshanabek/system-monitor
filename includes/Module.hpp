@@ -14,12 +14,12 @@ class Module : public IMonitorModule
 		~Module ();
 		Module (Module const & copy);
 		Module & operator=(Module const & copy);
-		void pushback(Module ok);
+		void pushback(Module *ok);
 		virtual void updateData();
 		virtual void showData();
 	private:
-		std::vector<Module> modules;
-		std::vector<Module>::iterator it;
+		std::vector<Module *> modules;
+		std::vector<Module *>::iterator it;
 };
 
 #endif

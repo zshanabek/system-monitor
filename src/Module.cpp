@@ -21,9 +21,8 @@ Module & Module::operator=(Module const & copy)
 	return (*this);
 }
 
-void Module::pushback(Module ok)
+void Module::pushback(Module* ok)
 {
-
 	this->modules.push_back(ok);
 }
 
@@ -31,7 +30,7 @@ void Module::updateData()
 {
 	for (it = modules.begin(); it != modules.end(); ++it)
 	{
-		it->updateData();
+		(*it)->updateData();
 	}
 }
 
@@ -39,6 +38,6 @@ void Module::showData()
 {
 	for (it = modules.begin(); it != modules.end(); ++it)
 	{
-		it->showData();
+		(*it)->showData();
 	}
 }

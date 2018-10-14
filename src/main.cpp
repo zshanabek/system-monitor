@@ -8,7 +8,7 @@
 
 void terminal()
 {
-	int		command;
+	// int		command;
 	bool	exit = false;
 
 	initscr();
@@ -19,11 +19,11 @@ void terminal()
 	Datetime datetime = Datetime();
 	CPU cpu = CPU();
 
-	m.pushback(hname);
-	m.pushback(os);
-	m.pushback(ram);
-	m.pushback(datetime);
-	m.pushback(cpu);
+	m.pushback(&hname);
+	m.pushback(&os);
+	m.pushback(&ram);
+	m.pushback(&datetime);
+	m.pushback(&cpu);
 
 	start_color();
 	init_pair(1, COLOR_CYAN, COLOR_BLACK);
@@ -32,9 +32,10 @@ void terminal()
 	{
 		m.updateData();
 		m.showData();
-		command = getch();
-		if (27 == command)
-			exit = true;
+		refresh();
+		// command = getch();	
+		// if (27 == command)
+			// exit = true;
 	}
 	endwin();
 }

@@ -23,6 +23,7 @@ class RAM : public Module
 	private:
 		long long _used;
 		long long _unused;
+		unsigned long long _total;
 };
 
 #endif
